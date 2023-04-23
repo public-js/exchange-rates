@@ -1,0 +1,78 @@
+{
+  "name": "exchange-rates",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "___ Manual Lint ___": "",
+    "man:space:format": "npm run ci:space:format -- --write",
+    "man:space:lint": "npm run ci:root:lint -- --fix && npm run ci:all:lint -- --fix",
+    "man:staged:lint": "lint-staged --concurrent false",
+    "___ CI Lint ___": "",
+    "ci:space:format": "prettier '**/*.{js,ts,scss,html,md,json,yml,*\\w\\wrc}'",
+    "ci:root:lint": "eslint '*.{js,ts}' --no-ignore",
+    "ci:all:lint": "nx run-many --target lint --all --parallel",
+    "___ CI Checks ___": "",
+    "ci:affect:test": "nx affected --target test --parallel",
+    "ci:affect:build": "nx affected --target build --parallel",
+    "ci:all:test": "nx run-many --target test --all --parallel --codeCoverage --coverageReporters=lcov",
+    "ci:all:build": "nx run-many --target build --all --parallel",
+    "___ CD Tasks ___": "",
+    "cd:all:publish": "nx run-many --target publish --all",
+    "cd:version-bump": "standard-version",
+    "cd:github-release": "cc-github-releaser --prefix v",
+    "___ Miscellaneous ___": "",
+    "man:nx:migrate": "npx nx migrate latest && npx nx migrate --run-migrations ; rm -f migrations.json",
+    "prepare": "is-ci || husky install"
+  },
+  "private": true,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@nrwl/eslint-plugin-nx": "15.9.2",
+    "@nrwl/jest": "15.9.2",
+    "@nrwl/js": "15.9.2",
+    "@nrwl/linter": "15.9.2",
+    "@nrwl/nx-cloud": "^16.0.1",
+    "@nrwl/workspace": "15.9.2",
+    "@public-js/cc-github-releaser": "latest",
+    "@public-js/eslint-plugin-node": "latest",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "eslint": "~8.15.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "^2.25.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.0",
+    "is-ci": "^3.0.0",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "lint-staged": "^13.0.0",
+    "nx": "15.9.2",
+    "prettier": "^2.7.0",
+    "standard-version": "^9.0.0",
+    "ts-jest": "^29.0.5",
+    "ts-node": "10.9.1",
+    "typescript": "~4.9.5"
+  },
+  "license": "MIT",
+  "author": "Public JS <public-js@muffin.blue> (https://github.com/public-js/public-js)",
+  "repository": "https://github.com/public-js/exchange-rates",
+  "homepage": "https://github.com/public-js/exchange-rates",
+  "lint-staged": {
+    "*.{js,ts,css,scss,html,md,json}": "prettier --write",
+    "*.{js,ts}": "eslint --fix"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "engines": {
+    "node": "^14.13.1 || ^16.1.0 || >= 18.0.0"
+  }
+}

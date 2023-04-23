@@ -1,0 +1,21 @@
+{
+  "name": "@public-js/exchange-rates",
+  "version": "0.0.0",
+  "description": "An extensive exchange rates API client supporting multiple services for best results",
+  "license": "MIT",
+  "author": "Public JS <public-js@muffin.blue> (https://github.com/public-js/public-js)",
+  "repository": "https://github.com/public-js/exchange-rates",
+  "homepage": "https://github.com/public-js/exchange-rates",
+  "keywords": [
+    "currency",
+    "currency rates",
+    "currency api",
+    "exchange",
+    "exchange rates",
+    "finance",
+    "money"
+  ],
+  "engines": {
+    "node": "^14.13.1 || ^16.1.0 || >=18.0.0"
+  }
+}
