@@ -83,4 +83,4 @@ It is possible however to enable only part of the supported services by providin
 ## License
 
 MIT, [full license text](LICENSE).
-Read more about it on [TLDRLegal](https://www.tldrlegal.com/l/mit).
+Read more about it on [TLDRLegal](https://www.tldrlegal.com/license/mit-license).
