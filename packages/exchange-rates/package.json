@@ -1,6 +1,6 @@
 {
   "name": "@public-js/exchange-rates",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An extensive exchange rates API client supporting multiple services for best results",
   "license": "MIT",
   "author": "Public JS <public-js@muffin.blue> (https://github.com/public-js/public-js)",
